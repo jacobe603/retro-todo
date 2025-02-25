@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Desktop area for storing dragged tasks -->
+    <div class="desktop" id="desktop"></div>
+    
+    <div class="app-container" id="app-window">
+        <div class="title-bar" id="title-bar">
+            <div class="title-text">Retro Todo App v1.0</div>
+            <div class="window-controls">
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+                <div class="control close"></div>
+            </div>
+        </div>
+        
+        <div class="app-content">
+            <div class="controls">
+                <input type="text" id="new-task-input" class="retro-input" placeholder="Enter a new task...">
+                <button id="add-task-btn" class="retro-button">Add Task</button>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="all">All Tasks</div>
+                <div class="tab" data-tab="active">Active</div>
+                <div class="tab" data-tab="completed">Completed</div>
+                <button id="clear-completed-btn" class="retro-button" style="margin-left: auto; font-size: 14px;">Clear Completed</button>
+            </div>
+            
+            <div class="tasks-container">
+                <div class="task-list" id="task-list">
+                    <!-- Tasks will be added here dynamically -->
+                </div>
+                
+                <div class="pomodoro-container">
+                    <h3>Pomodoro Timer</h3>
+                    <div class="timer-display" id="timer-display">25:00</div>
+                    <div class="timer-controls">
+                        <button id="start-timer-btn" class="retro-button">Start</button>
+                        <button id="reset-timer-btn" class="retro-button">Reset</button>
+                    </div>
+                    <div class="timer-settings">
+                        <div class="timer-setting">
+                            <label for="work-time">Work:</label>
+                            <input type="number" id="work-time" class="retro-input" value="25" min="1" max="60" style="width: 50px;">
+                        </div>
+                        <div class="timer-setting">
+                            <label for="break-time">Break:</label>
+                            <input type="number" id="break-time" class="retro-input" value="5" min="1" max="30" style="width: 50px;">
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <div id="current-task-name" style="margin-bottom: 5px; font-weight: bold;">No task selected</div>
+                        <button id="assign-timer-btn" class="retro-button" style="width: 100%;">Assign to Task</button>
+                        <div style="margin-top: 10px; text-align: center; font-size: 14px; color: #333;">
+                            <span id="timer-status">Timer not assigned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status-bar">
+            <div id="task-count">Tasks: 0 total, 0 completed</div>
+            <div id="time-date">00:00:00 | 01/01/2000</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
